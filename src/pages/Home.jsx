@@ -11,7 +11,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 export default function Home() {
-  //const images = ["./slideshow/img1", "./slideshow/img2", "./slideshow/img3"];
+  //const images = ["./slideshow/img1", "./slideshow/img2", "./slideshow/img3"]ddfdfd;
 
   return (
     <div className="home-page" dir="rtl">
