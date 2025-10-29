@@ -1,38 +1,61 @@
+import { useState } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 
 export default function AppNavbar() {
+  const [expanded, setExpanded] = useState(false);
+
   return (
     <Navbar
-      rootCloseEvent="click"
       bg="light"
       expand="md"
       sticky="top"
       className="shadow-sm"
+      expanded={expanded} // control the state
     >
       <Container>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Toggle
+          aria-controls="basic-navbar-nav"
+          onClick={() => setExpanded(!expanded)}
+        />
         <Navbar.Brand as={NavLink} to="/">
           <img
             src="https://placehold.co/40x40"
             alt="Logo"
             className="me-2 rounded-circle"
           />
-          MySite
+          נאנקינג טאי צ'י
         </Navbar.Brand>
-        <Navbar.Collapse rootCloseEvent="click" id="basic-navbar-nav">
+        <Navbar.Collapse id="basic-navbar-nav" className="overlay-collapse">
           <Nav className="ms-auto">
-            <Nav.Link as={NavLink} to="/" end>
+            <Nav.Link
+              as={NavLink}
+              to="/"
+              end
+              onClick={() => setExpanded(false)}
+            >
               בית
             </Nav.Link>
-            <Nav.Link as={NavLink} to="/about">
+            <Nav.Link
+              as={NavLink}
+              to="/about"
+              onClick={() => setExpanded(false)}
+            >
               האומנויות
             </Nav.Link>
-            <Nav.Link as={NavLink} to="/teacher">
+            <Nav.Link
+              as={NavLink}
+              to="/teacher"
+              onClick={() => setExpanded(false)}
+            >
               המורה
             </Nav.Link>
-            <Nav.Link as={NavLink} to="/contact">
+            <Nav.Link
+              as={NavLink}
+              to="/contact"
+              onClick={() => setExpanded(false)}
+            >
               צור קשר
             </Nav.Link>
           </Nav>

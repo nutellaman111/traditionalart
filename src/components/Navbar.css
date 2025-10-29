@@ -1,0 +1,19 @@
+.overlay-collapse {
+  position: absolute;
+  top: 100%; /* right below the navbar */
+  left: 0;
+  width: 100%;
+  z-index: 999; /* make sure it appears on top */
+  padding: inherit;
+  background-color: inherit;
+}
+
+.navbar .container {
+  background-color: inherit;
+}
+
+@media (min-width: 768px) {
+  .overlay-collapse {
+    position: static; /* normal behavior on desktop */
+  }
+}
